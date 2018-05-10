@@ -9,11 +9,44 @@
 </head>
 <html>
 <body>
-  <div class="stuff">
-    <button class="add">Add to cart</button>
-    <p>Help</p>
-    <p>Me</p>
-    <p>Please</p>
+  <div class="item" id="item1">
+      <!-- <p id="item1name" >Hamburger</p>
+      <p id="item1descripton">An Amazing Experience</p>
+      <p id="item1category">Burger</p> 
+      <p id="item1price">3.99</p>
+      <button id="btn1" class="add">Add to cart</button> -->
+      <button id="checkout" class="add">Time To CheckOut</button>
+  </div>
+  <div class="checkoutNone">
+    <h2>Your Wich Hunt Order!</h2>
+      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <p><a href="#">Subtotal</a> <span class="price">$2</span></p>
+      <p><a href="#">Tax</a> <span class="price">$2</span></p>
+      <p><a href="#">Your Wich Total!</a> <span class="price">$2</span></p>
+      <div class="payMethod">
+        <button id="btnCashNone">Pay with Cash</button>
+          <div class="cashNone">
+            <input type="text" name="FirstName" value="Enter Your Total">
+            <button id="btnChange">Submit to Get Change</button>
+            <div class=payBar>
+                <button id="btnPay">Complete Your Order</button> 
+            </div>
+          </div>
+        <button id="btnCreditNone">Pay with Credit Card</button>
+          <div class="creditNone">
+            <div class=payBar>
+                <button id="btnPay">Complete Your Order</button> 
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class ="receipt"> 
+    <h2>Your Wich Hunt Receipt</h2>
+    <p>Total <span class="">$15</span></p>
+    <P>Thank you for eating at Wich Hunt.</P>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="code.js"></script>
