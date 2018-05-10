@@ -2,12 +2,10 @@
 
 $(document).ready(function(){
 let counter = 0;
-// let image = new Image();
-//     img.src = "images/coke.jpg"; 
-//List of sandwich items as objects
+
 const samList =  [
   { 
-    Image: "images/coke.jpg",
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
     Name: "BLT",
     Price: 4,
     Description: "Bacon, Lettuce, and Tomoato. Duh.",
@@ -15,40 +13,78 @@ const samList =  [
   },
 
   {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
     Name: "PBJ",
     Price: 5,
-    // Description
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
   },
 
   {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
     Name: "Grilled Cheese",
     Price: 3,
-    // Description
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  }
+];
+const sideList =  [
+  { 
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Salad",
+    Price: 4,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  },
+
+  {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Grapes",
+    Price: 5,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  },
+
+  {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Drugs",
+    Price: 3,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  }
+];
+const drinkList =  [
+  { 
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Salad",
+    Price: 4,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  },
+
+  {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Grapes",
+    Price: 5,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
+  },
+
+  {
+    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
+    Name: "Drugs",
+    Price: 3,
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
   }
 ];
 
-// When we click on anything with the class of delete, run this function
-  $(document.body).on("click", ".delete", (e) => {
-    console.log("test");
-      // Loop through the array named foodList. The item parameter represents each element in the array...
-      // the index parameter represents the index of the item
-      cart.forEach((item, index) => {
-        console.log(item, index);
-        console.log(cart);
-        // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
-        if (item.Name ===  $(e.target).parent().attr("name")) {
-          // Splice it from the array
-          cart.splice(index, 1);
-        }
-      });
-     console.log(cart);
-    });
 
 
-  //function to display items in the DOM
-function display () {
+  //**********************function to display Sandwich*********************
+function displaySand () {
   samList.forEach((index) => {
-    const item = $("<div>");
+    const item = $(`<div class="wich">`);
     item.html(`
       <img src = ${index.Image}>
       <li>Name: ${index.Name}</li>
@@ -67,8 +103,75 @@ function display () {
     $(".swcards").append(item);
   })
 };
+displaySand();
+
+  //********************function to display Sides***************************
+  function displaySide () {
+    sideList.forEach((index) => {
+      const item = $(`<div class="wich">`);
+      item.html(`
+        <img src = ${index.Image}>
+        <li>Name: ${index.Name}</li>
+        <li>Price: ${index.Price}</li>
+        <li>Description: ${index.Description}</li>
+        <li>Category: ${index.Category}</li>
+        
+        <button type="button" class="add">Add</button>
+        <button type="button" class="delete">Delete Item</button>
+      `);
+      item.attr("image", `${index.Image}`);
+      item.attr("name", `${index.Name}`);
+      item.attr("price", `${index.Price}`);
+      item.attr("description", `${index.Description}`);
+      item.attr("description", `${index.Category}`);
+      $(".sicards").append(item);
+    })
+  };
 //We call the function to display the items
-display();
+displaySide();
+
+  //********************function to display Sides***************************
+  function displayDrink () {
+    drinkList.forEach((index) => {
+      const item = $(`<div class="wich">`);
+      item.html(`
+        <img src = ${index.Image}>
+        <li>Name: ${index.Name}</li>
+        <li>Price: ${index.Price}</li>
+        <li>Description: ${index.Description}</li>
+        <li>Category: ${index.Category}</li>
+        
+        <button type="button" class="add">Add</button>
+        <button type="button" class="delete">Delete Item</button>
+      `);
+      item.attr("image", `${index.Image}`);
+      item.attr("name", `${index.Name}`);
+      item.attr("price", `${index.Price}`);
+      item.attr("description", `${index.Description}`);
+      item.attr("description", `${index.Category}`);
+      $(".drcards").append(item);
+    })
+  };
+//We call the function to display the items
+displayDrink();
+
+// When we click on anything with the class of delete, run this function
+$(document.body).on("click", ".delete", (e) => {
+  console.log("test");
+    // Loop through the array named foodList. The item parameter represents each element in the array...
+    // the index parameter represents the index of the item
+    cart.forEach((item, index) => {
+      console.log(item, index);
+      console.log(cart);
+      // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
+      if (item.Name ===  $(e.target).parent().attr("name")) {
+        // Splice it from the array
+        cart.splice(index, 1);
+      }
+    });
+   console.log(cart);
+  });
+
 
 let cart = [];
 let total =0;
