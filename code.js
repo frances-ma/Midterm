@@ -2,24 +2,28 @@
 
 $(document).ready(function(){
 let counter = 0;
+// let image = new Image();
+//     img.src = "images/coke.jpg"; 
 //List of sandwich items as objects
 const samList =  [
-  {
+  { 
+    Image: "images/coke.jpg",
     Name: "BLT",
     Price: 4,
-    Description
+    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Category: "Sandwich"
   },
 
   {
     Name: "PBJ",
     Price: 5,
-    Description
+    // Description
   },
 
   {
     Name: "Grilled Cheese",
     Price: 3,
-    Description
+    // Description
   }
 ];
 
@@ -46,14 +50,20 @@ function display () {
   samList.forEach((index) => {
     const item = $("<div>");
     item.html(`
+      <img src = ${index.Image}>
       <li>Name: ${index.Name}</li>
       <li>Price: ${index.Price}</li>
+      <li>Description: ${index.Description}</li>
+      <li>Category: ${index.Category}</li>
       
       <button type="button" class="add">Add</button>
       <button type="button" class="delete">Delete Item</button>
     `);
+    item.attr("image", `${index.Image}`);
     item.attr("name", `${index.Name}`);
     item.attr("price", `${index.Price}`);
+    item.attr("description", `${index.Description}`);
+    item.attr("description", `${index.Category}`);
     $(".swcards").append(item);
   })
 };
