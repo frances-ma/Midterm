@@ -3,6 +3,7 @@
 $(document).ready(function(){
 let counter = 0;
 
+
 const samList =  [
   { 
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
@@ -223,9 +224,31 @@ let tax = 0.06;
     // console.log(event.target.parentNode.attributes["1"]);
   });
 
+
+
+  function displayReceipt () {
+      const item = $(`<div class="checkoutPopup">`);
+      item.html(`
+      <p>Total Amount: ${total} </p>
+      `);
+      
+      $(".drReceipt").append(item);
+    };
+//We call the function to display the items
+  // displayReceipt();
+
   // Functionality for CheckoutPopup
   $("#checkout").click(function(){
       $(".checkoutNone").toggleClass("checkoutPopup");
+      // function displayReceipt () {
+      //   const item = $(`<div class="checkoutPopup">`);
+      //   item.html(`
+      //   <p>Total Amount: ${total} </p>
+      //   `);
+        
+      //   $(".drReceipt").append(item);
+      // };
+      displayReceipt();
   });
   // Functionality for Pay with Cash
   $("#btnCashNone").click(function(){
