@@ -210,7 +210,7 @@ $(document.body).on("click", ".delete", (e) => {
 
 //Declaring some variables to calculate user's bill.  Basket = total number of items.
 let cart = [];
-let total =0;
+let total = 0;
 let tax = 0.06;
 let basket = 0;
 
@@ -236,7 +236,7 @@ let basket = 0;
 
   });
 
-});
+
 
 
 //Charity: function to pop up form with items, total, and checkout options.  Need to delete commented out stuff if not needed
@@ -246,6 +246,25 @@ $("#form").css("display","none");
 $(".icon").on("click", function(){
     // $(this).addClass("tracker");
     $("#form").css("display","block");
+    $("form").append(total);
+
+    function displayReceipt () {
+      const item = $(`<div class="checkoutPopup">`);
+      item.html(`
+      <p>SubTotal Amount: $${total} </p>
+      <p>Tax: $${total * tax} </p>
+      <P>Total: $${total} </p>
+      `);
+      
+      $(".billTotal").append(item);
+    };
+    displayReceipt();
+
+
+
+
+
+         
 });
 $("#remove").on("click", function() {
     // $(".tracker").toggleClass("tracker");
@@ -265,7 +284,8 @@ $("#btn").click(function(){
 //     $(".reserved > .reservation").html(`<p> Name: ${name}</p> <p> Party Size: ${partySize}</p>`);
 
 
-
+// $("form").append(total);
+//     };
 
 //   function displayReceipt () {
 //       const item = $(`<div class="checkoutPopup">`);
@@ -302,3 +322,4 @@ $("#btn").click(function(){
 
 
 // });
+});
