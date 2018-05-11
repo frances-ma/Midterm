@@ -3,6 +3,7 @@
 $(document).ready(function(){
 let counter = 0;
 
+
 const samList =  [
   { 
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
@@ -47,7 +48,7 @@ const sideList =  [
 
   {
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Drugs",
+    Name: "Drugs1",
     Price: 3,
     Description: "Bacon, Lettuce, and Tomoato. Duh.",
     Category: "Sandwich"
@@ -72,7 +73,7 @@ const drinkList =  [
 
   {
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Drugs",
+    Name: "Drugs2",
     Price: 3,
     Description: "Bacon, Lettuce, and Tomoato. Duh.",
     Category: "Sandwich"
@@ -192,9 +193,31 @@ let tax = 0.06;
     // console.log(event.target.parentNode.attributes["1"]);
   });
 
+
+
+  function displayReceipt () {
+      const item = $(`<div class="checkoutPopup">`);
+      item.html(`
+      <p>Total Amount: ${total} </p>
+      `);
+      
+      $(".drReceipt").append(item);
+    };
+//We call the function to display the items
+  // displayReceipt();
+
   // Functionality for CheckoutPopup
   $("#checkout").click(function(){
       $(".checkoutNone").toggleClass("checkoutPopup");
+      // function displayReceipt () {
+      //   const item = $(`<div class="checkoutPopup">`);
+      //   item.html(`
+      //   <p>Total Amount: ${total} </p>
+      //   `);
+        
+      //   $(".drReceipt").append(item);
+      // };
+      displayReceipt();
   });
   // Functionality for Pay with Cash
   $("#btnCashNone").click(function(){
