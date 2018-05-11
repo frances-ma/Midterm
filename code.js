@@ -246,25 +246,22 @@ $("#form").css("display","none");
 $(".icon").on("click", function(){
     // $(this).addClass("tracker");
     $("#form").css("display","block");
-    $("form").append(total);
+    // $("form").append(total);
 
     function displayReceipt () {
-      const item = $(`<div class="checkoutPopup">`);
+      let item = "";
+      item = $(`<div class="checkoutPopup">`);
       item.html(`
       <p>SubTotal Amount: $${total} </p>
       <p>Tax: $${total * tax} </p>
-      <P>Total: $${total} </p>
+      <P>Total: $${total+(total*tax)} </p>
       `);
-      
-      $(".billTotal").append(item);
+
+      // $(".billTotal").append(item);
+      $(".billTotal").html(item); //<--This shows the bill once and allows for updates
     };
     displayReceipt();
 
-
-
-
-
-         
 });
 $("#remove").on("click", function() {
     // $(".tracker").toggleClass("tracker");
