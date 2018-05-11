@@ -14,7 +14,6 @@ h1 {
 }
 
 
-
 h2 {
   font-family: 'Engagement', cursive;
   font-size: 48px; 
@@ -45,6 +44,7 @@ h2 {
   outline: none;  
   box-shadow: 2px 2px #888888;
   align-items: center; 
+  margin: 10px; 
 }
 
 
@@ -92,6 +92,8 @@ li {
   flex-direction: column;
   align-items: center;
 }
+
+
 .drcards {
   display: flex;
   flex-direction: column;
@@ -114,9 +116,6 @@ img {
 
 }
 
-.add {
-  margin: 10px;
-}
 
 .stuff {
   display: flex;
@@ -193,6 +192,13 @@ img {
 }
 
 @media only screen and (min-width: 1200px) {
+
+ h1 {
+   font-size: 100px; 
+ }
+
+
+
   .wich {
     display: inline-block; 
     flex-direction: row; 
@@ -269,11 +275,14 @@ img {
     flex-direction: row;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap; 
   }
   .drcards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    width: 100%; 
+    flex-wrap: wrap; 
 
   }
   img {

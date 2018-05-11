@@ -188,8 +188,9 @@ displaySide();
 displayDrink();
 
 // When we click on anything with the class of delete, run this function
+// WE STILL HAVE TO FIX THIS - for multiples of the same item 
 $(document.body).on("click", ".delete", (e) => {
-  console.log("test");
+  console.log("delete clicked");
     // Loop through the array named foodList. The item parameter represents each element in the array...
     // the index parameter represents the index of the item
     cart.forEach((item, index) => {
@@ -199,29 +200,40 @@ $(document.body).on("click", ".delete", (e) => {
       if (item.Name ===  $(e.target).parent().attr("name")) {
         // Splice it from the array
         cart.splice(index, 1);
+        basket--; 
       }
     });
-   console.log(cart);
+   console.log(cart.length);
+   $(".cart_total").html("<p>" + cart.length + "</p>"); 
+
   });
 
 
 let cart = [];
 let total =0;
 let tax = 0.06;
+let basket = 0; 
 
 //Add to cart section, takes name and price attributes and stores them in the cart
 
   $(".add").on("click", (event) => {
     cart.push({ Name: $(event.target).parent().attr("name"),
       Price: Number($(event.target).parent().attr("price"))
-    }) 
-    console.log(cart);
+    })
+    //console.log(cart);
+    basket ++; 
+    //console.log(basket); 
       // show form
     total += Number($(event.target).parent().attr("price"));
-    console.log(total, (total*tax), total+(total*tax));
+    console.log(cart.length); 
+   // console.log(total, (total*tax), total+(total*tax));
 
     // console.log(event.target.parentNode.attributes["0"]);
     // console.log(event.target.parentNode.attributes["1"]);
+    // $(".cart_total").remove(Number(basket)); 
+    $(".cart_total").html("<p>" + basket + "</p>"); 
+    //console.log(basket); 
+
   });
 
 
