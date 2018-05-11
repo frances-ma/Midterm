@@ -5,7 +5,7 @@ let counter = 0;
 
 
 const samList =  [
-  { 
+  {
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
     Name: "Witch & Famous",
     Price: 4,
@@ -40,7 +40,7 @@ const samList =  [
 
 ];
 const sideList =  [
-  { 
+  {
     Image: "https://i.imgur.com/O1CWpp8.jpg?1",
     Name: "No Frills, Just Fright",
     Price: 3,
@@ -62,7 +62,7 @@ const sideList =  [
     Price: 4,
     Description: "Butternut squash and pumpkin soup, topped with goat cheese and pumpkin seeds. We like to keep the Fall vibes going year round.",
     Category: "Side"
-  }, 
+  },
 
   {
     Image: "https://i.imgur.com/85GQhIB.jpg",
@@ -76,7 +76,7 @@ const sideList =  [
 
 ];
 const drinkList =  [
-  { 
+  {
     Image: "https://i.imgur.com/4vayyKl.jpg?1",
     Name: "Acqua Panna",
     Price: 3,
@@ -98,7 +98,7 @@ const drinkList =  [
     Price: 3,
     Description: "Made with pure Rose oil from the world-famous Rose Valley in Kazanlak, Bulgaria.",
     Category: "Drink"
-  }, 
+  },
 
   {
     Image: "https://i.imgur.com/Y5We1P7.jpg",
@@ -123,7 +123,7 @@ function displaySand () {
       <li>Price: ${index.Price}</li>
       <li>Description: ${index.Description}</li>
       <li>Category: ${index.Category}</li>
-      
+
       <button type="button" class="add">Add</button>
       <button type="button" class="delete">Delete</button>
     `);
@@ -147,7 +147,7 @@ displaySand();
         <li>Price: ${index.Price}</li>
         <li>Description: ${index.Description}</li>
         <li>Category: ${index.Category}</li>
-        
+
         <button type="button" class="add">Add</button>
         <button type="button" class="delete">Delete</button>
       `);
@@ -162,7 +162,7 @@ displaySand();
 //We call the function to display the items
 displaySide();
 
-  //********************function to display Sides***************************
+  //********************function to display Drinks***************************
   function displayDrink () {
     drinkList.forEach((index) => {
       const item = $(`<div class="wich">`);
@@ -172,7 +172,7 @@ displaySide();
         <li>Price: ${index.Price}</li>
         <li>Description: ${index.Description}</li>
         <li>Category: ${index.Category}</li>
-        
+
         <button type="button" class="add">Add</button>
         <button type="button" class="delete">Delete</button>
       `);
@@ -188,7 +188,7 @@ displaySide();
 displayDrink();
 
 // When we click on anything with the class of delete, run this function
-// WE STILL HAVE TO FIX THIS - for multiples of the same item 
+// WE STILL HAVE TO FIX THIS - for multiples of the same item
 $(document.body).on("click", ".delete", (e) => {
   console.log("delete clicked");
     // Loop through the array named foodList. The item parameter represents each element in the array...
@@ -200,19 +200,19 @@ $(document.body).on("click", ".delete", (e) => {
       if (item.Name ===  $(e.target).parent().attr("name")) {
         // Splice it from the array
         cart.splice(index, 1);
-        basket--; 
+        basket--;
       }
     });
    console.log(cart.length);
-   $(".cart_total").html("<p>" + cart.length + "</p>"); 
+   $(".cart_total").html("<p>" + cart.length + "</p>");
 
   });
 
-
+//Declaring some variables to calculate user's bill.  Basket = total number of items.
 let cart = [];
 let total =0;
 let tax = 0.06;
-let basket = 0; 
+let basket = 0;
 
 //Add to cart section, takes name and price attributes and stores them in the cart
 
@@ -221,18 +221,18 @@ let basket = 0;
       Price: Number($(event.target).parent().attr("price"))
     })
     //console.log(cart);
-    basket ++; 
-    //console.log(basket); 
+    basket ++;
+    //console.log(basket);
       // show form
     total += Number($(event.target).parent().attr("price"));
-    console.log(cart.length); 
+    console.log(cart.length);
    // console.log(total, (total*tax), total+(total*tax));
 
     // console.log(event.target.parentNode.attributes["0"]);
     // console.log(event.target.parentNode.attributes["1"]);
-    // $(".cart_total").remove(Number(basket)); 
-    $(".cart_total").html("<p>" + basket + "</p>"); 
-    //console.log(basket); 
+    // $(".cart_total").remove(Number(basket));
+    $(".cart_total").html("<p>" + basket + "</p>");
+    //console.log(basket);
 
   });
 
@@ -245,7 +245,7 @@ $("#form").css("display","none");
 
 $(".icon").on("click", function(){
     // $(this).addClass("tracker");
-    $("#form").css("display","block");      
+    $("#form").css("display","block");
 });
 $("#remove").on("click", function() {
     // $(".tracker").toggleClass("tracker");
@@ -272,7 +272,7 @@ $("#btn").click(function(){
 //       item.html(`
 //       <p>Total Amount: ${total} </p>
 //       `);
-      
+
 //       $(".drReceipt").append(item);
 //     };
 // //We call the function to display the items
@@ -286,7 +286,7 @@ $("#btn").click(function(){
 //       //   item.html(`
 //       //   <p>Total Amount: ${total} </p>
 //       //   `);
-        
+
 //       //   $(".drReceipt").append(item);
 //       // };
 //       displayReceipt();
