@@ -224,40 +224,69 @@ let tax = 0.06;
     // console.log(event.target.parentNode.attributes["1"]);
   });
 
-
-
-  function displayReceipt () {
-      const item = $(`<div class="checkoutPopup">`);
-      item.html(`
-      <p>Total Amount: ${total} </p>
-      `);
-      
-      $(".drReceipt").append(item);
-    };
-//We call the function to display the items
-  // displayReceipt();
-
-  // Functionality for CheckoutPopup
-  $("#checkout").click(function(){
-      $(".checkoutNone").toggleClass("checkoutPopup");
-      // function displayReceipt () {
-      //   const item = $(`<div class="checkoutPopup">`);
-      //   item.html(`
-      //   <p>Total Amount: ${total} </p>
-      //   `);
-        
-      //   $(".drReceipt").append(item);
-      // };
-      displayReceipt();
-  });
-  // Functionality for Pay with Cash
-  $("#btnCashNone").click(function(){
-    $(".cashNone").toggleClass("cashShow");
-  });
-  //Functionality for Pay with CC
-  $("#btnCreditNone").click(function(){
-    $(".creditNone").toggleClass("creditShow");
-  });
-
-
 });
+
+
+//Charity: function to pop up form with items, total, and checkout options.  Need to delete commented out stuff if not needed
+
+$("#form").css("display","none");
+
+$(".icon").on("click", function(){
+    // $(this).addClass("tracker");
+    $("#form").css("display","block");      
+});
+$("#remove").on("click", function() {
+    // $(".tracker").toggleClass("tracker");
+    $("#form").css("display", "none")
+});
+$("#btn").click(function(){
+    // let name = $("#name").val();
+    // let partySize = $("#party").val();
+    // // $("#name").attr("value", "");
+    // $(".tracker").toggleClass("reserved available tracker");
+    $("#form").css("display", "none");
+    $("#form").fadeOut(150);
+    });
+// $(document).on("mouseenter", ".reserved" , function() {
+//     let name = $("#name").val();
+//     let partySize = $("#party").val();
+//     $(".reserved > .reservation").html(`<p> Name: ${name}</p> <p> Party Size: ${partySize}</p>`);
+
+
+
+
+//   function displayReceipt () {
+//       const item = $(`<div class="checkoutPopup">`);
+//       item.html(`
+//       <p>Total Amount: ${total} </p>
+//       `);
+      
+//       $(".drReceipt").append(item);
+//     };
+// //We call the function to display the items
+//   // displayReceipt();
+
+//   // Functionality for CheckoutPopup
+//   $("#checkout").click(function(){
+//       $(".checkoutNone").toggleClass("checkoutPopup");
+//       // function displayReceipt () {
+//       //   const item = $(`<div class="checkoutPopup">`);
+//       //   item.html(`
+//       //   <p>Total Amount: ${total} </p>
+//       //   `);
+        
+//       //   $(".drReceipt").append(item);
+//       // };
+//       displayReceipt();
+//   });
+//   // Functionality for Pay with Cash
+//   $("#btnCashNone").click(function(){
+//     $(".cashNone").toggleClass("cashShow");
+//   });
+//   //Functionality for Pay with CC
+//   $("#btnCreditNone").click(function(){
+//     $(".creditNone").toggleClass("creditShow");
+//   });
+
+
+// });
