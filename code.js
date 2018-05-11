@@ -250,6 +250,7 @@ $(".icon").on("click", function(){
 
     function displayReceipt () {
       let item = "";
+
       item = $(`<div class="checkoutPopup">`);
       item.html(`
       <p>SubTotal Amount: $${total} </p>
@@ -257,7 +258,15 @@ $(".icon").on("click", function(){
       <P>Total: $${total+(total*tax)} </p>
       `);
 
-      // $(".billTotal").append(item);
+      cart.forEach((item) => {
+        console.log(item);
+        $(".showTheItems").append(`
+            <li>${item.Name} and costs: ${item.Price} </li>
+          `);
+      });
+
+
+      //$(".billTotal").append(item);
       $(".billTotal").html(item); //<--This shows the bill once and allows for updates
     };
     displayReceipt();
