@@ -1,6 +1,30 @@
 body {
-  background-color: bisque;
+  background-color:#F2F3F8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+h1 {
+  font-family: 'Engagement', cursive;
+  font-size: 80px;
+  color: #3C54B4;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #4574b9;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+
+
+
 .swcards {
   display: flex;
   flex-direction: column;
@@ -17,12 +41,6 @@ body {
   align-items: center;
 }
 
-.wich {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  text-align: center;
-}
 .wich {
   display: flex;
   flex-direction: column;
@@ -117,11 +135,21 @@ img {
 }
 
 @media only screen and (min-width: 1200px) {
-  body {
-    text-align: center;
-  
-  background-color: rgb(223, 31, 213);
+  .wich {
+    display: inline-block; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    width: 50%;
   }
+  /* .drcards {
+    display: inline-block; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    width: 50%;
+  } */
+
   .checkoutPopup {
     display: flex;
     flex-direction: column;
@@ -175,6 +203,20 @@ img {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+  }
+
+
+  .sicards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .drcards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
   img {
     margin: 50px;

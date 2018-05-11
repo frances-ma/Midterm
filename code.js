@@ -6,77 +6,108 @@ let counter = 0;
 const samList =  [
   { 
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "BLT",
+    Name: "Witch & Famous",
     Price: 4,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Description: "French bread stuffed with cilantro, pork-belly, & pickled root veggies. Comes with a dollop of our delectable crème fraiche. Sure to cast a spell on your taste buds!",
     Category: "Sandwich"
   },
 
   {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "PBJ",
+    Image: "https://i.imgur.com/BY8F4CN.jpg",
+    Name: "The Basic Witch",
     Price: 5,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Description: "Classic plain-bagel sandwich filled to the brim with alfalfa sprouts, butter lettuce, and grilled tempeh. Topped with our signature roasted red pepper cream-cheese.",
     Category: "Sandwich"
   },
 
   {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Grilled Cheese",
-    Price: 3,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
+    Image: "https://i.imgur.com/NOE64NS.jpg?1",
+    Name: "If You’ve Got It, Haunt It",
+    Price: 7,
+    Description: "Brioche bun with prosciutto, sliced cucumbers, endive, and red-leaf lettuce. This sandwich is re-inventing the broom.",
+    Category: "Sandwich"
+  },
+
+  {
+    Image: "https://i.imgur.com/IOfdxm7.jpg",
+    Name: "The Black-Cat Burger",
+    Price: 6,
+    Description: "Seeded bun with black bean patty, tomato, Bibb lettuce, and almond cheese. Is a burger a sandwich? Of course it is! This witchin’ vegan black-bean burger will leave you wanting more.",
     Category: "Sandwich"
   }
+
+
 ];
 const sideList =  [
   { 
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Salad",
-    Price: 4,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
-  },
-
-  {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Grapes",
-    Price: 5,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
-  },
-
-  {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Drugs",
+    Image: "https://i.imgur.com/O1CWpp8.jpg?1",
+    Name: "No Frills, Just Fright",
     Price: 3,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
+    Description: "Side salad with all the essentials! Lettuce, tomato, veggies, oil. Broom!",
+    Category: "Side"
+  },
+
+  {
+    Image: "https://i.imgur.com/Ne63gWv.jpg",
+    Name: "Main Witch",
+    Price: 2,
+    Description: "Kettle chips made in-house, fried in avocado oil. Essential add-on.",
+    Category: "Side"
+  },
+
+  {
+    Image: "https://i.imgur.com/1lyCh3c.jpg?1",
+    Name: "Creepin' It Real",
+    Price: 4,
+    Description: "Butternut squash and pumpkin soup, topped with goat cheese and pumpkin seeds. We like to keep the Fall vibes going year round.",
+    Category: "Side"
+  }, 
+
+  {
+    Image: "https://i.imgur.com/85GQhIB.jpg",
+    Name: "Broomsticks",
+    Price: 3,
+    Description: "French-fries, but better. Comes with a side of habanero catsup.",
+    Category: "Side"
   }
+
+
+
 ];
 const drinkList =  [
   { 
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Salad",
-    Price: 4,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
-  },
-
-  {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Grapes",
-    Price: 5,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
-  },
-
-  {
-    Image: "https://i.imgur.com/dz4rZbI.jpg?1",
-    Name: "Drugs",
+    Image: "https://i.imgur.com/4vayyKl.jpg?1",
+    Name: "Acqua Panna",
     Price: 3,
-    Description: "Bacon, Lettuce, and Tomoato. Duh.",
-    Category: "Sandwich"
+    Description: "Still, natural mineral water from the heart of Tuscany, Italy.",
+    Category: "Drink"
+  },
+
+  {
+    Image: "https://i.imgur.com/Azc4xOu.jpg?1",
+    Name: "Bubble-Bubble",
+    Price: 3,
+    Description: "Tired of lemonade? So are we. We add lime, mint, and bubbles to our house potion.",
+    Category: "Drink"
+  },
+
+  {
+    Image: "https://i.imgur.com/zi5N7rQ.jpg?1",
+    Name: "Fentimans Rose Lemonade",
+    Price: 3,
+    Description: "Made with pure Rose oil from the world-famous Rose Valley in Kazanlak, Bulgaria.",
+    Category: "Drink"
+  }, 
+
+  {
+    Image: "https://i.imgur.com/Y5We1P7.jpg",
+    Name: "Coca-Cola",
+    Price: 2,
+    Description: "A classic. Share a coke with yourself, you deserve it.",
+    Category: "Drink"
   }
+
+
 ];
 
 
