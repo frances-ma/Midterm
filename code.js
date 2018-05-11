@@ -125,7 +125,7 @@ function displaySand () {
       <li>Category: ${index.Category}</li>
       
       <button type="button" class="add">Add</button>
-      <button type="button" class="delete">Delete Item</button>
+      <button type="button" class="delete">Delete</button>
     `);
     item.attr("image", `${index.Image}`);
     item.attr("name", `${index.Name}`);
@@ -149,7 +149,7 @@ displaySand();
         <li>Category: ${index.Category}</li>
         
         <button type="button" class="add">Add</button>
-        <button type="button" class="delete">Delete Item</button>
+        <button type="button" class="delete">Delete</button>
       `);
       item.attr("image", `${index.Image}`);
       item.attr("name", `${index.Name}`);
@@ -174,7 +174,7 @@ displaySide();
         <li>Category: ${index.Category}</li>
         
         <button type="button" class="add">Add</button>
-        <button type="button" class="delete">Delete Item</button>
+        <button type="button" class="delete">Delete</button>
       `);
       item.attr("image", `${index.Image}`);
       item.attr("name", `${index.Name}`);
