@@ -235,10 +235,11 @@ $(".add").on("click", (event) => {
 });
 
 
-
-
 $(".icon").on("click", function(){
     $("#form").css("display","block");
+
+
+  
     function displayBill () {
       let item = "";
 
@@ -275,6 +276,11 @@ $("#btnCheckout").click(function(){
     $("#form").css("display", "none");
     $("#receipt").css("display", "block");
     $("#form").fadeOut(150);
+    $("#cashGiven").val();
+    let change = "Change: "
+    $("#changeBack").append("Change: $", + $("#cashGiven").val() - (total+(total*tax)));
+
+
   });
 // This allows us to exit the window
 $("#closeReceipt").on("click", function() {
@@ -284,24 +290,46 @@ $("#closeReceipt").on("click", function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // DO WE NEED THIS
 // $("#btnPaybill").click(function(){
 //   $("#receipt").css("display", "none");
 //   $("#form").fadeOut(150);
 //   });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // $(document).on("mouseenter", ".reserved" , function() {
 //     let name = $("#name").val();
@@ -344,7 +372,5 @@ $("#closeReceipt").on("click", function() {
 //   $("#btnCreditNone").click(function(){
 //     $(".creditNone").toggleClass("creditShow");
 //   });
-
-
 // });
 });

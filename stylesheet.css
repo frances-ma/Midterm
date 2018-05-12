@@ -293,6 +293,10 @@ input[type=text] {
   font-size: 15px;
   justify-content: center;
 }
+#changeBack {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
 
 
 
