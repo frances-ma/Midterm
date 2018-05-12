@@ -8,7 +8,8 @@ const samList =  [
     Name: "Witch & Famous",
     Price: 4,
     Description: "French bread stuffed with cilantro, pork-belly, & pickled root veggies. Comes with a dollop of our delectable crème fraiche. Sure to cast a spell on your taste buds!",
-    Category: "Sandwich"
+    Category: "Sandwich",
+    Id: counter
   },
 
   {
@@ -16,7 +17,8 @@ const samList =  [
     Name: "The Basic Witch",
     Price: 5,
     Description: "Classic plain-bagel sandwich filled to the brim with alfalfa sprouts, butter lettuce, and grilled tempeh. Topped with our signature roasted red pepper cream-cheese.",
-    Category: "Sandwich"
+    Category: "Sandwich",
+    Id: counter
   },
 
   {
@@ -24,7 +26,8 @@ const samList =  [
     Name: "If You’ve Got It, Haunt It",
     Price: 7,
     Description: "Brioche bun with prosciutto, sliced cucumbers, endive, and red-leaf lettuce. This sandwich is re-inventing the broom.",
-    Category: "Sandwich"
+    Category: "Sandwich",
+    Id: counter
   },
 
   {
@@ -32,7 +35,8 @@ const samList =  [
     Name: "The Black-Cat Burger",
     Price: 6,
     Description: "Seeded bun with black bean patty, tomato, Bibb lettuce, and almond cheese. Is a burger a sandwich? Of course it is! This witchin’ vegan black-bean burger will leave you wanting more.",
-    Category: "Sandwich"
+    Category: "Sandwich",
+    Id: counter
   }
 ];
 // Beginning array for sidelist
@@ -109,6 +113,7 @@ const drinkList =  [
 function displaySand () {
   samList.forEach((index) => {
     const item = $(`<div class="wich">`);
+    item.attr("item-num", `${index.Id}`);
     item.html(`
       <img src = ${index.Image}>
       <li>Name: ${index.Name}</li>
@@ -123,7 +128,7 @@ function displaySand () {
     item.attr("name", `${index.Name}`);
     item.attr("price", `${index.Price}`);
     item.attr("description", `${index.Description}`);
-    item.attr("description", `${index.Category}`);
+    item.attr("category", `${index.Category}`);
     $(".swcards").append(item);
   })
 };
@@ -147,7 +152,7 @@ displaySand();
       item.attr("name", `${index.Name}`);
       item.attr("price", `${index.Price}`);
       item.attr("description", `${index.Description}`);
-      item.attr("description", `${index.Category}`);
+      item.attr("category", `${index.Category}`);
       $(".sicards").append(item);
     })
   };
@@ -171,7 +176,7 @@ displaySide();
       item.attr("name", `${index.Name}`);
       item.attr("price", `${index.Price}`);
       item.attr("description", `${index.Description}`);
-      item.attr("description", `${index.Category}`);
+      item.attr("category", `${index.Category}`);
       $(".drcards").append(item);
     })
   };
@@ -181,7 +186,7 @@ displayDrink();
 // WE STILL HAVE TO FIX THIS - for multiples of the same item
 $(document.body).on("click", ".delete", (e) => {
   console.log("delete clicked");
-    // Loop through the array named foodList. The item parameter represents each element in the array...
+    // Loop through the array. The item parameter represents each element in the array...
     // the index parameter represents the index of the item
     cart.forEach((item, index) => {
       console.log(item, index);
@@ -191,10 +196,19 @@ $(document.body).on("click", ".delete", (e) => {
         // Splice it from the array
         cart.splice(index, 1);
         basket--;
+        
       }
+      //Attempted giving each item a unqiue Id, and targeting the Id for deletion but no success...
+
+      // if (Number($(e.target).parent().attr("item-num")) === item.Id) {
+      //   cart.splice(index, 1);
+      //   basket--;
+      //   --counter;
+      // }
     });
    console.log(cart.length);
    $(".cart_total").html("<p>" + cart.length + "</p>");
+   displayBill();
   });
 
 //Declaring some variables to calculate user's bill.  Basket = total number of items.
@@ -207,15 +221,23 @@ let basket = 0;
 
 $(".add").on("click", (event) => {
   cart.push({ Name: $(event.target).parent().attr("name"),
-    Price: Number($(event.target).parent().attr("price"))
-  })
+    Price: Number($(event.target).parent().attr("price")),
+    Id: ++counter
+  });
   //console.log(cart);
   basket ++;
   //console.log(basket);
     // show form
   total += Number($(event.target).parent().attr("price"));
   console.log(cart.length);
-  // console.log(total, (total*tax), total+(total*tax));
+  //This was moved from the displayBill function.  It adds item info to the bill on the click of "Add"
+  cart.forEach((item) => {
+    console.log(item);
+    $(".showTheItems").append(`
+        <li>${item.Name}: $${item.Price} </li>
+      `);
+  });
+
 
   // console.log(event.target.parentNode.attributes["0"]);
   // console.log(event.target.parentNode.attributes["1"]);
@@ -227,26 +249,25 @@ $(".add").on("click", (event) => {
 // This is the checkout button click function.
 $(".icon").on("click", function(){
     $("#form").css("display","block");
-      
+
 
     function displayBill () {
-      
+
       let item = "";
-      
 
       item = $(`<div class="checkoutPopup">`);
       item.html(`
       <p>SubTotal Amount: $${total} </p>
-      <p>Tax: $${total * tax} </p>
-      <P>Total: $${total+(total*tax)} </p>
+      <p>Tax: $${Math.floor((total * tax) * 100) / 100} </p>
+      <p>Total: $${Math.floor(( total + (total * tax)) * 100) / 100}</p>
       `);
 
-      cart.forEach((item) => {
-        console.log(item);
-        $(".showTheItems").append(`
-            <li>${item.Name} and costs: ${item.Price} </li>
-          `);
-      });
+      // cart.forEach((item) => {
+      //   console.log(item);
+      //   $(".showTheItems").append(`
+      //       <li>${item.Name}: $${item.Price} </li>
+      //     `);
+      // });
       $(".billTotal, #receiptNumbers").html(item); //<--This shows the bill once and allows for updates
     };
     displayBill();
@@ -258,12 +279,13 @@ $("#form").css("display","none");
 // Responsible for closing out the bill window
 $("#closeBill").on("click", function() {
     $("#form").css("display", "none")
+    $(".showTheItems li").remove();
   });
 
-// This hides the receipt initially and to allow the receipt to show. 
+// This hides the receipt initially and to allow the receipt to show.
 $("#receipt").css("display","none");
 
-// This allows the button to toggle the bill to not show and show the receipt. 
+// This allows the button to toggle the bill to not show and show the receipt.
 $("#btnCheckout").click(function(){
     $("#form").css("display", "none");
     $("#receipt").css("display", "block");
@@ -277,6 +299,8 @@ $("#btnCheckout").click(function(){
 $("#closeReceipt").on("click", function() {
   $("#receipt").css("display", "none")
 });
+
+
 
 
 
