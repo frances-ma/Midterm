@@ -184,7 +184,6 @@ displaySide();
       $(".drcards").append(item);
     })
   };
-//We call the function to display the items
 displayDrink();
 
 // When we click on anything with the class of delete, run this function
@@ -216,39 +215,31 @@ let basket = 0;
 
 //Add to cart section, takes name and price attributes and stores them in the cart
 
-  $(".add").on("click", (event) => {
-    cart.push({ Name: $(event.target).parent().attr("name"),
-      Price: Number($(event.target).parent().attr("price"))
-    })
-    //console.log(cart);
-    basket ++;
-    //console.log(basket);
-      // show form
-    total += Number($(event.target).parent().attr("price"));
-    console.log(cart.length);
-   // console.log(total, (total*tax), total+(total*tax));
+$(".add").on("click", (event) => {
+  cart.push({ Name: $(event.target).parent().attr("name"),
+    Price: Number($(event.target).parent().attr("price"))
+  })
+  //console.log(cart);
+  basket ++;
+  //console.log(basket);
+    // show form
+  total += Number($(event.target).parent().attr("price"));
+  console.log(cart.length);
+  // console.log(total, (total*tax), total+(total*tax));
 
-    // console.log(event.target.parentNode.attributes["0"]);
-    // console.log(event.target.parentNode.attributes["1"]);
-    // $(".cart_total").remove(Number(basket));
-    $(".cart_total").html("<p>" + basket + "</p>");
-    //console.log(basket);
-
-  });
-
+  // console.log(event.target.parentNode.attributes["0"]);
+  // console.log(event.target.parentNode.attributes["1"]);
+  // $(".cart_total").remove(Number(basket));
+  $(".cart_total").html("<p>" + basket + "</p>");
+  //console.log(basket);
+});
 
 
 
-//Charity: function to pop up form with items, total, and checkout options.  Need to delete commented out stuff if not needed
-
-$("#form").css("display","none");
 
 $(".icon").on("click", function(){
-    // $(this).addClass("tracker");
     $("#form").css("display","block");
-    // $("form").append(total);
-
-    function displayReceipt () {
+    function displayBill () {
       let item = "";
 
       item = $(`<div class="checkoutPopup">`);
@@ -265,26 +256,54 @@ $(".icon").on("click", function(){
           `);
       });
 
-
-      //$(".billTotal").append(item);
-      $(".billTotal").html(item); //<--This shows the bill once and allows for updates
+      $(".billTotal, #receiptNumbers").html(item); //<--This shows the bill once and allows for updates
     };
-    displayReceipt();
+    displayBill();
+});
 
-});
-$("#remove").on("click", function() {
-    // $(".tracker").toggleClass("tracker");
+// This hides the bill initially.
+$("#form").css("display","none");
+// Responsible for closing out the bill window
+$("#closeBill").on("click", function() {
     $("#form").css("display", "none")
-});
-$("#btn").click(function(){
-    // let name = $("#name").val();
-    // let partySize = $("#party").val();
-    // // $("#name").attr("value", "");
-    // $(".tracker").toggleClass("reserved available tracker");
+  });
+// This hides the receipt initially and to allow the receipt to show. 
+$("#receipt").css("display","none");
+
+// This allows the button to toggle the bill to not show and show the receipt. 
+$("#btnCheckout").click(function(){
     $("#form").css("display", "none");
+    $("#receipt").css("display", "block");
     $("#form").fadeOut(150);
-    });
-// $(document).on("mouseenter", ".reserved" , function() {
+  });
+// This allows us to exit the window
+$("#closeReceipt").on("click", function() {
+  $("#receipt").css("display", "none")
+});
+
+
+
+
+// DO WE NEED THIS
+// $("#btnPaybill").click(function(){
+//   $("#receipt").css("display", "none");
+//   $("#form").fadeOut(150);
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // $(document).on("mouseenter", ".reserved" , function() {
 //     let name = $("#name").val();
 //     let partySize = $("#party").val();
 //     $(".reserved > .reservation").html(`<p> Name: ${name}</p> <p> Party Size: ${partySize}</p>`);
