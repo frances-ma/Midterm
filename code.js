@@ -1,9 +1,7 @@
 "use strict";
-
 $(document).ready(function(){
 let counter = 0;
-
-
+// Beginning Array for sandwich list
 const samList =  [
   {
     Image: "https://i.imgur.com/dz4rZbI.jpg?1",
@@ -36,9 +34,8 @@ const samList =  [
     Description: "Seeded bun with black bean patty, tomato, Bibb lettuce, and almond cheese. Is a burger a sandwich? Of course it is! This witchin’ vegan black-bean burger will leave you wanting more.",
     Category: "Sandwich"
   }
-
-
 ];
+// Beginning array for sidelist
 const sideList =  [
   {
     Image: "https://i.imgur.com/O1CWpp8.jpg?1",
@@ -71,10 +68,8 @@ const sideList =  [
     Description: "French-fries, but better. Comes with a side of habanero catsup.",
     Category: "Side"
   }
-
-
-
 ];
+// Beginning array for drinklist
 const drinkList =  [
   {
     Image: "https://i.imgur.com/4vayyKl.jpg?1",
@@ -108,10 +103,7 @@ const drinkList =  [
     Category: "Drink"
   }
 
-
 ];
-
-
 
   //**********************function to display Sandwich*********************
 function displaySand () {
@@ -159,7 +151,6 @@ displaySand();
       $(".sicards").append(item);
     })
   };
-//We call the function to display the items
 displaySide();
 
   //********************function to display Drinks***************************
@@ -204,7 +195,6 @@ $(document.body).on("click", ".delete", (e) => {
     });
    console.log(cart.length);
    $(".cart_total").html("<p>" + cart.length + "</p>");
-
   });
 
 //Declaring some variables to calculate user's bill.  Basket = total number of items.
@@ -234,14 +224,15 @@ $(".add").on("click", (event) => {
   //console.log(basket);
 });
 
-
+// This is the checkout button click function.
 $(".icon").on("click", function(){
     $("#form").css("display","block");
+      
 
-
-  
     function displayBill () {
+      
       let item = "";
+      
 
       item = $(`<div class="checkoutPopup">`);
       item.html(`
@@ -256,7 +247,6 @@ $(".icon").on("click", function(){
             <li>${item.Name} and costs: ${item.Price} </li>
           `);
       });
-
       $(".billTotal, #receiptNumbers").html(item); //<--This shows the bill once and allows for updates
     };
     displayBill();
@@ -264,10 +254,12 @@ $(".icon").on("click", function(){
 
 // This hides the bill initially.
 $("#form").css("display","none");
+
 // Responsible for closing out the bill window
 $("#closeBill").on("click", function() {
     $("#form").css("display", "none")
   });
+
 // This hides the receipt initially and to allow the receipt to show. 
 $("#receipt").css("display","none");
 
@@ -279,9 +271,8 @@ $("#btnCheckout").click(function(){
     $("#cashGiven").val();
     let change = "Change: "
     $("#changeBack").append("Change: $", + $("#cashGiven").val() - (total+(total*tax)));
-
-
   });
+
 // This allows us to exit the window
 $("#closeReceipt").on("click", function() {
   $("#receipt").css("display", "none")
