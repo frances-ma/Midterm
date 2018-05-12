@@ -277,6 +277,7 @@ input[type=text] {
   top: 20px;
   font-size: 15px;
   justify-content: center;
+  overflow: auto;
 }
 #receipt{
   background-color: #9CACDC;
@@ -292,6 +293,7 @@ input[type=text] {
   top: 20px;
   font-size: 15px;
   justify-content: center;
+  overflow: auto;
 }
 #changeBack {
   text-align: center;
