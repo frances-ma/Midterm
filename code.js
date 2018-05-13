@@ -196,7 +196,6 @@ $(document.body).on("click", ".delete", (e) => {
         // Splice it from the array
         cart.splice(index, 1);
         basket--;
-        
       }
       //Attempted giving each item a unqiue Id, and targeting the Id for deletion but no success...
 
@@ -259,7 +258,7 @@ $(".icon").on("click", function(){
       item.html(`
       <p>SubTotal Amount: $${total} </p>
       <p>Tax: $${Math.floor((total * tax) * 100) / 100} </p>
-      <p>Total: $${Math.floor(( total + (total * tax)) * 100) / 100}</p>
+      <p>Total: $${ total + (total * tax)}</p>
       `);
 
       // cart.forEach((item) => {
