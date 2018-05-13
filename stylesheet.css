@@ -13,7 +13,6 @@ h1 {
   margin: 0 auto;
 }
 
-
 h2 {
   font-family: 'Engagement', cursive;
   font-size: 48px;
@@ -53,13 +52,10 @@ h3 {
   margin: 10px;
 }
 
-
-
 p {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
-
 
 .icon {
   width: 70px;
@@ -71,7 +67,6 @@ p {
   width: 100%;
   height: auto;
 }
-
 
 h4 {
   font-family: 'Montserrat', sans-serif;
@@ -86,7 +81,6 @@ li {
   text-align: center;
 }
 
-
 .swcards {
   display: flex;
   flex-direction: column;
@@ -98,7 +92,6 @@ li {
   flex-direction: column;
   align-items: center;
 }
-
 
 .drcards {
   display: flex;
@@ -119,9 +112,7 @@ img {
   border-radius: 50%;
   margin: 10px 0px;
   border: 2px solid #F4DC46;
-
 }
-
 
 .stuff {
   display: flex;
@@ -129,7 +120,7 @@ img {
   justify-content: space-around;
 }
 
-#form{
+#bill{
   background-color: #9CACDC;
   box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
   display: flex;
@@ -186,6 +177,7 @@ img {
   flex: 50%;
   padding: 0 16px;
 }
+
 input[type=text] {
   width: 87%;
   height: 2px;
@@ -194,6 +186,7 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+
 .row {
   display: -ms-flexbox;
   display: flex;
@@ -201,6 +194,7 @@ input[type=text] {
   flex-wrap: wrap;
   margin: 0 -16px;
 }
+
 .container {
   display: block;
   position: relative;
@@ -262,7 +256,8 @@ input[type=text] {
   border-radius: 50%;
   background: white;
 }
-#form{
+
+#bill{
   background-color: #9CACDC;
   box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
   display: flex;
@@ -279,6 +274,7 @@ input[type=text] {
   justify-content: center;
   overflow: auto;
 }
+
 #receipt{
   background-color: #9CACDC;
   box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
@@ -300,93 +296,6 @@ input[type=text] {
   font-family: 'Montserrat', sans-serif;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .checkoutNone {
-  display: none;
-}
-
-.checkoutPopup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: beige;
-  width: 250px;
-  height: 400px;
-  font-size: 12px;
-  margin:  0 auto;
-  position: relative;
-  bottom: 150px;
-  left: 0px;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-.payMethod {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  justify-content: space-around;
-}
-.payBar {
-  margin-top: 50px;
-  display: flex;
-  width: 80%;
-  justify-content: center;
-}
-#btnCash {
-  width: 40%;
-  color: white;
-  background: blue;
-  height: 50px;
-}
-.cashNone {
-  display: none;
-}
-.cashShow {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  height: 200px;
-}
-
-#btnCredit {
-  width: 40%;
-  color: white;
-  background: blue;
-  height: 50px;
-}
-.creditNone {
-  display: none;
-}
-.creditShow {
-  display: flex;
-}
-
-#btnPay {
-  width: 100%;
-  color: white;
-  background: green;
-  height: 70px;
-  font-size: 24px;
-} */
-
 /* *******************************Media Query****************************************** */
 
 @media only screen and (min-width: 600px) {
@@ -395,8 +304,6 @@ input[type=text] {
    font-size: 100px;
  }
 
-
-
   .wich {
     display: inline-block;
     flex-direction: row;
@@ -404,64 +311,11 @@ input[type=text] {
     justify-content: center;
     width: 50%;
   }
-  #form {
+
+  #bill {
     justify-content: flex-end;
   }
-  /* .drcards {
-    display: inline-block;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-  } */
 
-  /* .checkoutPopup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: beige;
-    width: 1000px;
-    height: 600px;
-    font-size: 12px;
-    margin:  0 auto;
-    position: relative;
-    bottom: -50px;
-
-    border: 1px solid black;
-    border-radius: 2px;
-  }
-  .payMethod {
-    margin-top: 50px;
-    display: flex;
-    width: 80%;
-    justify-content: space-around;
-  }
-  .payBar {
-    margin-top: 50px;
-    display: flex;
-    width: 80%;
-    justify-content: center;
-  }
-  #btnCash {
-    width: 40%;
-    color: white;
-    background: blue;
-    height: 50px;
-  }
-  #btnCredit {
-    width: 40%;
-    color: white;
-    background: blue;
-    height: 50px;
-  } */
-
-  /* #btnPay {
-    width: 100%;
-    color: white;
-    background: green;
-    height: 100px;
-    font-size: 48px;
-  } */
   .swcards {
     display: flex;
     justify-content: center;
@@ -470,7 +324,6 @@ input[type=text] {
     flex-wrap: wrap;
   }
 
-
   .sicards {
     display: flex;
     flex-direction: row;
@@ -478,17 +331,19 @@ input[type=text] {
     width: 100%;
     flex-wrap: wrap;
   }
+
   .drcards {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-
   }
+
   img {
     margin: 50px;
   }
+
   #receipt{
     background-color: #9CACDC;
     box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
