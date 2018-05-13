@@ -273,6 +273,17 @@ $(document).ready(function(){
       $("#bill").css("display", "none");
       $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
+        let cashGiven = $("#cashGiven").val();
+        let grossTotal = (total * (1 +tax));
+        let change = cashGiven - grossTotal;
+  
+        $("#changeBack").html("Change: $" + change);
+      });
+  
+    // This allows us to exit the window
+    $("#closeReceipt").on("click", function() {
+      $("#receipt").css("display", "none")
+    });
 
       // This function allows us to look for a value and if it is not equal to 0, it will give Change.
       function getChange () {
@@ -295,4 +306,3 @@ $(document).ready(function(){
   $("#closeReceipt").on("click", function() {
     $("#receipt").css("display", "none")
   });
-});
