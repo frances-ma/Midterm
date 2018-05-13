@@ -187,9 +187,7 @@ $(document).ready(function(){
   let tax = 0.06;
   let basket = 0;
 
-  // When we click on anything with the class of delete, run this function
-  // WE STILL HAVE TO FIX THIS - for multiples of the same item
-  // $(document.body).on("click", ".delete", (e) => {
+  // Deletes Items
   $('.delete').on("click", (e) => {
     console.log("delete clicked");
     total -= Number($(event.target).parent().attr("price"));
@@ -205,13 +203,6 @@ $(document).ready(function(){
           cart.splice(index, 1);
           basket--;
         }
-        //Attempted giving each item a unqiue Id, and targeting the Id for deletion but no success...
-
-        // if (Number($(e.target).parent().attr("item-num")) === item.Id) {
-        //   cart.splice(index, 1);
-        //   basket--;
-        //   --counter;
-        // }
       });
 
       // For each again to display the items in the <ul> block
@@ -229,8 +220,7 @@ $(document).ready(function(){
   //Add to cart section, takes name and price attributes and stores them in the cart
 
   $(".add").on("click", (event) => {
-    console.log("counter: " + counter); // todo: delete, just curious if actually set
-    // Dont' need to loop through here each and every time... only ever adding one item
+    console.log("counter: " + counter);
     let item = {
       Name: $(event.target).parent().attr("name"),
       Price: Number($(event.target).parent().attr("price")),
@@ -245,12 +235,11 @@ $(document).ready(function(){
     console.log(cart.length);
 
     //This was moved from the displayBill function.  It adds item info to the bill on the click of "Add"
-     // console.log(item);
+
     $(".showTheItems").append(`
         <li>${item.Name}: $${item.Price} </li>
     `);
 
-  // $(".cart_total").remove(Number(basket));
   $(".cart_total").html("<p>" + basket + "</p>");
   });
 
@@ -273,16 +262,10 @@ $(document).ready(function(){
     displayBill();
   });
 
-  // *****************I dont think these lines are needed **********************
-  // // This hides the bill initially.
-  // $("#bill").css("display","none");
-    // // This hides the receipt initially and to allow the receipt to show.
-  // $("#receipt").css("display","none");
-
   // Responsible for closing out the bill window
   $("#closeBill").on("click", function() {
       $("#bill").css("display", "none")
-      // $(".showTheItems li").remove();
+
     });
 
   // This allows the button to toggle the bill to not show and show the receipt.
