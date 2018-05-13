@@ -242,7 +242,7 @@ $(document).ready(function(){
 
   // This is the checkout button click function.
   $(".icon").on("click", function(){
-      $("#bill").css("display","block");
+      $("#bill").css("display","flex");
 
     // This function allows for computation of bill total and appends to bill and receipt section
     function displayBill () {
@@ -259,8 +259,11 @@ $(document).ready(function(){
     displayBill();
   });
 
-  // This hides the bill initially.
-  $("#bill").css("display","none");
+  // *****************I dont think these lines are needed **********************
+  // // This hides the bill initially.
+  // $("#bill").css("display","none");
+    // // This hides the receipt initially and to allow the receipt to show.
+  // $("#receipt").css("display","none");
 
   // Responsible for closing out the bill window
   $("#closeBill").on("click", function() {
@@ -268,13 +271,10 @@ $(document).ready(function(){
       $(".showTheItems li").remove();
     });
 
-  // This hides the receipt initially and to allow the receipt to show.
-  $("#receipt").css("display","none");
-
   // This allows the button to toggle the bill to not show and show the receipt.
   $("#btnCheckout").click(function(){
       $("#bill").css("display", "none");
-      $("#receipt").css("display", "block");
+      $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
       $("#cashGiven").val();
       let change = "Change: "

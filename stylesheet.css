@@ -260,7 +260,7 @@ input[type=text] {
 #bill{
   background-color: #9CACDC;
   box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-  display: flex;
+  display: none;
   /* box-sizing: border-box; */
   width: 230px;
   height: 1000px;
@@ -278,7 +278,7 @@ input[type=text] {
 #receipt{
   background-color: #9CACDC;
   box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-  display: flex;
+  display: none;
   width: 250px;
   height: 700px;
   padding: 10px;
@@ -291,6 +291,7 @@ input[type=text] {
   justify-content: center;
   overflow: auto;
 }
+/* This holds the return for change back. */
 #changeBack {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -300,15 +301,13 @@ input[type=text] {
 
 @media only screen and (min-width: 600px) {
 
- h1 {
-   font-size: 100px;
- }
+  h1 {
+      font-size: 100px;
+  }
+  /* The wich class is used for the items in the divs of swcards, sicards and drcards. */
 
   .wich {
     display: inline-block;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     width: 50%;
   }
 
@@ -347,7 +346,7 @@ input[type=text] {
   #receipt{
     background-color: #9CACDC;
     box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-    display: flex;
+    display: none;
     /* box-sizing: border-box; */
     width: 500px;
     height: 700px;
