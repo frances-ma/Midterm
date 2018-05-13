@@ -199,6 +199,7 @@ $(document).ready(function(){
         // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
         if (item.Name ===  $(e.target).parent().attr("name")) {
           // Splice it from the array
+          total -= Number($(event.target).parent().attr("price"));
           cart.splice(index, 1);
           basket--;
         }
@@ -268,7 +269,6 @@ $(document).ready(function(){
   // Responsible for closing out the bill window
   $("#closeBill").on("click", function() {
       $("#bill").css("display", "none")
-      $(".showTheItems li").remove();
     });
 
   // This allows the button to toggle the bill to not show and show the receipt.
