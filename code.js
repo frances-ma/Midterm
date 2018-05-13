@@ -189,7 +189,8 @@ $(document).ready(function(){
 
   // When we click on anything with the class of delete, run this function
   // WE STILL HAVE TO FIX THIS - for multiples of the same item
-  $(document.body).on("click", ".delete", (e) => {
+  // $(document.body).on("click", ".delete", (e) => {
+  $('.delete').on("click", (e) => {
     console.log("delete clicked");
       // Loop through the array. The item parameter represents each element in the array...
       // the index parameter represents the index of the item
@@ -199,7 +200,6 @@ $(document).ready(function(){
         // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
         if (item.Name ===  $(e.target).parent().attr("name")) {
           // Splice it from the array
-          total -= Number($(event.target).parent().attr("price"));
           cart.splice(index, 1);
           basket--;
         }
@@ -211,31 +211,42 @@ $(document).ready(function(){
         //   --counter;
         // }
       });
-    console.log(cart.length);
+
+      // For each again to display the items in the <ul> block
+      $('.showTheItems').html(''); // reset the html in side the <ul> block
+      cart.forEach((item, index) => { // then rebuild the display
+        $(".showTheItems").append(`
+            <li>${item.Name}: $${item.Price} </li>
+        `);
+      });
+
     $(".cart_total").html("<p>" + cart.length + "</p>");
-    displayBill();
+    // displayBill();
   });
 
   //Add to cart section, takes name and price attributes and stores them in the cart
 
   $(".add").on("click", (event) => {
-    cart.push({ Name: $(event.target).parent().attr("name"),
+    console.log("counter: " + counter); // todo: delete, just curious if actually set
+    // Dont' need to loop through here each and every time... only ever adding one item
+    let item = {
+      Name: $(event.target).parent().attr("name"),
       Price: Number($(event.target).parent().attr("price")),
       Id: ++counter
-    });
-    //console.log(cart);
-    basket ++;
-    //console.log(basket);
-      // show form
+    };
+
+    cart.push(item);
+    basket++;
+
+    // show form
     total += Number($(event.target).parent().attr("price"));
     console.log(cart.length);
+
     //This was moved from the displayBill function.  It adds item info to the bill on the click of "Add"
-    cart.forEach((item) => {
-      console.log(item);
-      $(".showTheItems").append(`
-          <li>${item.Name}: $${item.Price} </li>
-        `);
-    });
+     // console.log(item);
+    $(".showTheItems").append(`
+        <li>${item.Name}: $${item.Price} </li>
+    `);
 
   // $(".cart_total").remove(Number(basket));
   $(".cart_total").html("<p>" + basket + "</p>");
@@ -269,6 +280,7 @@ $(document).ready(function(){
   // Responsible for closing out the bill window
   $("#closeBill").on("click", function() {
       $("#bill").css("display", "none")
+      // $(".showTheItems li").remove();
     });
 
   // This allows the button to toggle the bill to not show and show the receipt.
