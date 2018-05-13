@@ -192,9 +192,11 @@ $(document).ready(function(){
   // $(document.body).on("click", ".delete", (e) => {
   $('.delete').on("click", (e) => {
     console.log("delete clicked");
+    total -= Number($(event.target).parent().attr("price"));
       // Loop through the array. The item parameter represents each element in the array...
       // the index parameter represents the index of the item
       cart.forEach((item, index) => {
+      
         console.log(item, index);
         console.log(cart);
         // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
