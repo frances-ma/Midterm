@@ -273,15 +273,17 @@ $(document).ready(function(){
       $("#bill").css("display", "none");
       $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
+
+      // This function allows us to look for a value and if it is not equal to 0, it will give Change.
       function getChange () {
         $("#changeBack").empty();
         let cashGiven = "";
         cashGiven = $("#cashGiven").val();
         console.log(cashGiven);
-        if (cashGiven == 0.00) {
+        if (cashGiven === 0.00) {
           console.log("no money")
         } else {
-          $("#changeBack").append("Change: $", + $("#cashGiven").val() - (total+(total*tax)));
+          $("#changeBack").append("Change: $", + Math.floor((cashGiven - (total+(total*tax)))));
           console.log("money");
         }
       }
