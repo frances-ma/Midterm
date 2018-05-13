@@ -273,9 +273,20 @@ $(document).ready(function(){
       $("#bill").css("display", "none");
       $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
-      $("#cashGiven").val();
-      let change = "Change: "
-      $("#changeBack").append("Change: $", + $("#cashGiven").val() - (total+(total*tax)));
+      function getChange () {
+        $("#changeBack").empty();
+        let cashGiven = "";
+        cashGiven = $("#cashGiven").val();
+        console.log(cashGiven);
+        if (cashGiven == 0.00) {
+          console.log("no money")
+        } else {
+          $("#changeBack").append("Change: $", + $("#cashGiven").val() - (total+(total*tax)));
+          console.log("money");
+        }
+      }
+      getChange();
+
     });
 
   // This allows us to exit the window
