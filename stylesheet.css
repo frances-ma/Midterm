@@ -7,21 +7,21 @@ body {
 }
 
 .icon_flex {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
   font-family: 'Engagement', cursive;
   font-size: 80px;
   color: #3C54B4;
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  margin: 0 auto; 
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 h4 {
@@ -34,22 +34,22 @@ h4 {
 }
 
 .shop {
-  display: none; 
+  display: none;
 }
 
 .icon {
   width: 70px;
   height: 70px;
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .witch {
-  height: 200px; 
-  width: 200px; 
-  margin: 0 auto; 
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
 }
 
 h2 {
@@ -99,7 +99,7 @@ p {
 .icon img {
   width: 100%;
   height: auto;
-} 
+}
 
 li {
   font-family: 'Montserrat', sans-serif;
@@ -110,21 +110,21 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .sicards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .drcards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .wich {
@@ -140,7 +140,7 @@ img {
   border-radius: 50%;
   margin: 10px 0px;
   border: 2px solid #F4DC46;
-}  
+}
 
 .stuff {
   display: flex;
@@ -163,6 +163,7 @@ img {
   font-size: 15px;
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  overflow: auto;
 }
 
 #btnCheckout {
@@ -187,7 +188,7 @@ img {
   height: 24px;
   border: none;
   background-color: #9CACDC;
-  outline: none; 
+  outline: none;
 }
 
 /* This class belongs to the receipt and is used for targeting the closing of the receipt */
@@ -200,7 +201,7 @@ img {
   height: 24px;
   border: none;
   background-color: #9CACDC;
-  outline: none; 
+  outline: none;
 }
 
 .col-50 {
@@ -288,22 +289,6 @@ input[type=text] {
   background: white;
 }
 
-#bill{
-  background-color: #9CACDC;
-  box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-  display: none;
-  width: 230px;
-  height: 1000px;
-  padding: 10px;
-  border-radius: 4px;
-  z-index: 2;
-  margin: auto;
-  position: absolute;
-  top: 20px;
-  font-size: 15px;
-  justify-content: center;
-  overflow: auto;
-}
 
 #receipt{
   background-color: #9CACDC;
@@ -330,7 +315,6 @@ input[type=text] {
 .showTheItems li {
   list-style-type: none;
   text-align: center;
-  margin-left: -40px;
   margin-bottom: 2px;
  }
 
@@ -339,13 +323,13 @@ input[type=text] {
 @media only screen and (min-width: 600px) {
 
 .shop {
-  display: flex; 
-  width: 100%; 
-  height: auto; 
-  border-radius: 0px; 
+  display: flex;
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
   border: 10px double #8790d0;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   box-shadow: 8px 8px 10px #aaa;
   /* border: 15px solid #3e2b14;
   padding: 10px; */
@@ -356,37 +340,37 @@ h1 {
  }
 
 h2 {
-  font-size: 80px; 
+  font-size: 80px;
 }
 
 .mission {
-  font-size: 40px; 
+  font-size: 40px;
 }
 
 h4 {
-   font-size: 50px; 
+   font-size: 50px;
    border-bottom: double;
  }
 
 .icon_flex {
-  display: flex; 
-  flex-direction: row; 
-  justify-content: flex-end; 
-  align-items: flex-end;  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .witch {
   /* border: 5px solid #F4DC46;  */
-  width: 250px; 
-  height: 250px; 
-  border-radius: 0px; 
-  border: none; 
+  width: 250px;
+  height: 250px;
+  border-radius: 0px;
+  border: none;
 }
 
 .icon {
-  display: flex; 
-  justify-content: flex-end; 
-  align-items: flex-end; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .wich {
@@ -397,7 +381,7 @@ h4 {
 #bill {
   justify-content: flex-end;
 }
-  
+
 .swcards {
   display: flex;
   justify-content: center;

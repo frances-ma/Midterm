@@ -1,6 +1,6 @@
 "use strict";
 $(document).ready(function(){
-  let counter = 0;
+let counter = 0;
   // Beginning Array for sandwich list
   const samList =  [
     {
@@ -189,15 +189,11 @@ $(document).ready(function(){
 
   // Deletes Items
   $('.delete').on("click", (e) => {
-    console.log("delete clicked");
     total -= Number($(event.target).parent().attr("price"));
       // Loop through the array. The item parameter represents each element in the array...
       // the index parameter represents the index of the item
       cart.forEach((item, index) => {
-
-        console.log(item, index);
-        console.log(cart);
-        // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
+        // If the element we clicked on has a parent with a matching name...
         if (item.Name ===  $(e.target).parent().attr("name")) {
           // Splice it from the array
           cart.splice(index, 1);
@@ -213,8 +209,8 @@ $(document).ready(function(){
         `);
       });
 
-      $(".cart_total").html(`<p> Cart : ${cart.length}  </p>`);
-    // displayBill();
+        $(".cart_total").html(`<p> Cart : ${cart.length}  </p>`);
+
   });
 
   //Add to cart section, takes name and price attributes and stores them in the cart
@@ -226,13 +222,11 @@ $(document).ready(function(){
       Price: Number($(event.target).parent().attr("price")),
       Id: ++counter
     };
-
+    //Adds item to the cart array, increases basket, adds item price to total
     cart.push(item);
     basket++;
 
-    // show form
     total += Number($(event.target).parent().attr("price"));
-    console.log(cart.length);
 
     //This was moved from the displayBill function.  It adds item info to the bill on the click of "Add"
 
@@ -254,7 +248,7 @@ $(document).ready(function(){
       item = $(`<div class="checkoutPopup">`);
       item.html(`
       <p>SubTotal Amount: $${total} </p>
-      <p>Tax: $${total * tax} </p>
+      <p>Tax: $${(total * tax).toFixed(2)} </p>
       <p>Total: $${ total + (total * tax)}</p>
       `);
       $(".billTotal, #receiptNumbers").html(item); //<--This shows the bill once and allows for updates
@@ -278,10 +272,8 @@ $(document).ready(function(){
         $("#changeBack").empty();
         let cashGiven = "";
         cashGiven = $("#cashGiven").val();
-        console.log(cashGiven);
         let fullTotal = total+(total*tax);
         let change = Number(cashGiven - fullTotal).toFixed(2);
-        console.log(change);
         if (cashGiven == 0.00) {
           console.log("no money")
         } else {
@@ -295,6 +287,10 @@ $(document).ready(function(){
   // This allows us to exit the window
   $("#closeReceipt").on("click", function() {
     $("#receipt").css("display", "none");
+    function clearOrder(){
+      location.reload();
+    }
+    clearOrder();
   });
 
 });
