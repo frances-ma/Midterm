@@ -213,7 +213,7 @@ $(document).ready(function(){
         `);
       });
 
-    $(".cart_total").html("<p>" + cart.length + "</p>");
+    $(".cart_total").html(`<p> + Cart : ${cart.length} + </p>`);
     // displayBill();
   });
 
