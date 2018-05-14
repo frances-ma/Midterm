@@ -213,7 +213,7 @@ $(document).ready(function(){
         `);
       });
 
-    $(".cart_total").html(`<p> + Cart : ${cart.length} + </p>`);
+      $(".cart_total").html(`<p> Cart : ${cart.length}  </p>`);
     // displayBill();
   });
 
@@ -240,7 +240,7 @@ $(document).ready(function(){
         <li>${item.Name}: $${item.Price} </li>
     `);
 
-  $(".cart_total").html("<p>" + basket + "</p>");
+    $(".cart_total").html(`<p> Cart : ${basket} </p>`);
   });
 
   // This is the checkout button click function.
@@ -273,36 +273,32 @@ $(document).ready(function(){
       $("#bill").css("display", "none");
       $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
-        let cashGiven = $("#cashGiven").val();
-        let grossTotal = (total * (1 +tax));
-        let change = cashGiven - grossTotal;
-  
-        $("#changeBack").html("Change: $" + change);
-      });
-  
-    // This allows us to exit the window
-    $("#closeReceipt").on("click", function() {
-      $("#receipt").css("display", "none")
-    });
-
       // This function allows us to look for a value and if it is not equal to 0, it will give Change.
       function getChange () {
         $("#changeBack").empty();
         let cashGiven = "";
         cashGiven = $("#cashGiven").val();
         console.log(cashGiven);
-        if (cashGiven === 0.00) {
+        if (cashGiven == 0.00) {
           console.log("no money")
         } else {
-          $("#changeBack").append("Change: $", + Math.floor((cashGiven - (total+(total*tax)))));
+        $("#changeBack").append("Change: $", + Math.floor((cashGiven - (total+(total*tax)))));
           console.log("money");
         }
       }
-      getChange();
-
+      getChange ();
+      
+  
     });
 
   // This allows us to exit the window
   $("#closeReceipt").on("click", function() {
     $("#receipt").css("display", "none")
   });
+  
+    
+
+
+});
+
+  

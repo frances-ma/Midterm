@@ -327,6 +327,13 @@ input[type=text] {
   font-family: 'Montserrat', sans-serif;
 }
 
+li {
+  list-style-type: none;
+  text-align: center;
+  margin-left: -40px;
+  margin-bottom: 2px;
+}
+
 /* *******************************Media Query****************************************** */
 
 @media only screen and (min-width: 600px) {
