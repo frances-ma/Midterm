@@ -387,7 +387,6 @@ h4 {
   width: 50%;
 }
 
-<<<<<<< Updated upstream
 #bill {
   justify-content: flex-end;
 }
@@ -435,60 +434,5 @@ img {
   font-size: 15px;
   justify-content: center;
 }
-=======
-  .wich {
-    display: inline-block;
-    width: 50%;
-  }
-
-  #bill {
-    display: flex; 
-  }
-
-  .swcards {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .sicards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .drcards {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  img {
-    margin: 50px;
-  }
-
-  #receipt{
-    background-color: #9CACDC;
-    box-shadow: 0px 0px 31px 1px rgba(0,0,0,0.3);
-    display: none;
-    /* box-sizing: border-box; */
-    width: 500px;
-    height: 700px;
-    padding: 10px;
-    border-radius: 4px;
-    z-index: 2;
-    margin: auto;
-    position: absolute;
-    top: 20px;
-    font-size: 15px;
-    justify-content: center;
-  }
->>>>>>> Stashed changes
 
 }
