@@ -194,7 +194,7 @@ $(document).ready(function(){
       // Loop through the array. The item parameter represents each element in the array...
       // the index parameter represents the index of the item
       cart.forEach((item, index) => {
-      
+
         console.log(item, index);
         console.log(cart);
         // If the element we clicked on has a parent element with an item-number attribute that matches the item's Id property...
@@ -254,7 +254,7 @@ $(document).ready(function(){
       item = $(`<div class="checkoutPopup">`);
       item.html(`
       <p>SubTotal Amount: $${total} </p>
-      <p>Tax: $${Math.floor((total * tax) * 100) / 100} </p>
+      <p>Tax: $${total * tax} </p>
       <p>Total: $${ total + (total * tax)}</p>
       `);
       $(".billTotal, #receiptNumbers").html(item); //<--This shows the bill once and allows for updates
@@ -279,26 +279,27 @@ $(document).ready(function(){
         let cashGiven = "";
         cashGiven = $("#cashGiven").val();
         console.log(cashGiven);
+        let fullTotal = total+(total*tax);
+        let change = Number(cashGiven - fullTotal).toFixed(2);
+        console.log(change);
         if (cashGiven == 0.00) {
           console.log("no money")
         } else {
-        $("#changeBack").append("Change: $", + Math.floor((cashGiven - (total+(total*tax)))));
+        $("#changeBack").append("Change: $", + cashGiven - (total+(total*tax)));
           console.log("money");
         }
       }
       getChange ();
-      
-  
+
+
     });
 
   // This allows us to exit the window
   $("#closeReceipt").on("click", function() {
-    $("#receipt").css("display", "none")
+    $("#receipt").css("display", "none");
   });
-  
-    
+
+
 
 
 });
-
-  
