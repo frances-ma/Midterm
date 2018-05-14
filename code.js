@@ -268,8 +268,8 @@ $(document).ready(function(){
 
     });
 
-  // This allows the button to toggle the bill to not show and show the receipt.
-  $("#btnCheckout").click(function(){
+    // This allows the button to toggle the bill to not show and show the receipt.
+    $("#btnCheckout").click(function(){
       $("#bill").css("display", "none");
       $("#receipt").css("display", "flex");
       $("#bill").fadeOut(150);
@@ -285,21 +285,16 @@ $(document).ready(function(){
         if (cashGiven == 0.00) {
           console.log("no money")
         } else {
-        $("#changeBack").append("Change: $", + cashGiven - (total+(total*tax)));
+        $("#changeBack").append("Change: $", + change);
           console.log("money");
         }
       }
       getChange ();
-
-
     });
 
   // This allows us to exit the window
   $("#closeReceipt").on("click", function() {
     $("#receipt").css("display", "none");
   });
-
-
-
 
 });
